@@ -7,7 +7,7 @@ import string
 import pickle
 
 nltk.download('stopwords')
-spacy.download('en_core_web_lg')
+spacy.load('en_core_web_lg')
 from nltk.corpus import stopwords, wordnet
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
