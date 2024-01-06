@@ -4,8 +4,7 @@ import re
 import nltk
 import spacy
 import string
-import pickle
-
+import joblib
 nltk.download('stopwords')
 spacy.load('en_core_web_lg')
 from nltk.corpus import stopwords, wordnet
@@ -16,11 +15,11 @@ from nltk.corpus import words
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # loading the trained model
-pickle_in = open('toxicity_classifier_model.pkt', 'rb')
-classifier = pickle.load(pickle_in)
 
-pickle_in1 = open('tf_idf.pkt', 'rb')
-tfidf = pickle.load(pickle_in1)
+
+classifier = joblib.load('toxic.joblib')
+
+tfidf = joblib.load('tfidf.joblib')
 
 # Define the mapping of shortforms to their full words
 shortforms_mapping = {
