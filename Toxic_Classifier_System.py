@@ -20,7 +20,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 classifier = joblib.load('toxic.joblib')
 
 tfidf = joblib.load('tfidf.joblib')
-
+st.cache_data.clear()
 # Define the mapping of shortforms to their full words
 shortforms_mapping = {
     "aren't": "are not",
